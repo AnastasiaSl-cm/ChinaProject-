@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платформер с китайскими цветами</title>
+    <link rel="stylesheet" href="styles-colors.css">
+</head>
+<body>
+    <header id="page-title">Разбей препятствия правильным цветом!</header>
+    <div id="game-container">
+        <div id="road"></div>
+        <div id="player"></div>
+        <div id="obstacles"></div>
+    </div>
+    <div id="controls">
+        <div id="question">Выбери правильный цвет:</div>
+        <div id="answer-feedback" class="hidden"></div>
+        <div id="buttons"></div>
+    </div>
+    <div id="success-popup" class="hidden">
+        <h2>Поздравляем! Уровень пройден!</h2>
+        <div id="sparkles-container"></div>
+        <button id="restart">Начать заново</button>
+    </div>
+    
+    <script src="script-colors.js"></script>
+</body>
+</html>

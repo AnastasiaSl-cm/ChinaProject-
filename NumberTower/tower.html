@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Башня из китайских чисел</title>
+    <link rel="stylesheet" href="styles-tower.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Построй башню из китайских чисел</h1>
+        <div id="tower" class="tower"></div>
+        <div id="blocks" class="blocks">
+            <!-- Числовые блоки будут добавлены динамически -->
+        </div>
+    </div>
+
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Поздравляем!</h2>
+            <p>Вы успешно собрали башню!</p>
+            <button id="restartButton">Начать заново</button>
+            <div class="sparks"></div>
+        </div>
+    </div>
+
+    <script src="script-tower.js"></script>
+</body>
+</html>

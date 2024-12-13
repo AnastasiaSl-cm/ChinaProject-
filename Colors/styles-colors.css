@@ -1,0 +1,196 @@
+/* Стиль для всей страницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #a7a77e; /* Темно-зелёный цвет */
+    color: #333;
+}
+/* Заголовок страницы */
+#page-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #8b0000;
+}
+
+/* Контейнер игры */
+#game-container {
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 10px solid #b22222;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: url('background-image.png') no-repeat center center; /* Фон для игровой зоны */
+    background-size: cover;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* Дорога/платформа */
+#road {
+    position: absolute;
+    bottom: 0; /* Делаем границу дороги до самого низа */
+    width: 100%;
+    height: 50px;
+    background: url('ground-image.png') repeat-x; /* Изображение земли */
+    background-size: cover;
+}
+
+/* Игрок */
+#player {
+    position: absolute;
+    bottom: 50px; /* Чтобы игрок находился на платформе */
+    left: 50px;
+    width: 70px;
+    height: 70px;
+    background: url('player.png') no-repeat center/contain;
+    transition: left 0.2s, bottom 0.2s;
+}
+
+/* Препятствия */
+.obstacle {
+    position: absolute;
+    bottom: 50px; /* Размещаем препятствия на платформе */
+    width: 60px;
+    height: 60px;
+    background: url('obstacle-image.png') no-repeat center/contain; /* Изображение препятствия */
+    border: none;
+    transition: transform 0.2s;
+}
+
+.shake {
+    transform: translateX(-10px);
+    animation: shake 0.3s linear infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(-10px); }
+}
+
+/* Панель управления */
+#controls {
+    display: flex;
+    flex-direction: column; /* Расположение элементов по вертикали */
+    align-items: center;    /* Центрирование по горизонтали */
+    margin: 20px auto;      /* Центрирование по странице */
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    border: 5px solid #8b0000;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+}
+
+/* Кнопки с вариантами ответов */
+#buttons {
+    display: flex;         /* Горизонтальное расположение кнопок */
+    justify-content: center; /* Центрирование кнопок */
+    gap: 15px;            /* Расстояние между кнопками */
+    flex-wrap: wrap;
+    margin-top: 20px;      /* Перенос кнопок, если не хватает места */
+}
+
+.answer {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #753232;
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.answer:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+.hidden {
+    display: none;
+}
+
+/* Успешное прохождение */
+#success-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #b22222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Отзыв о выборе ответа */
+#answer-feedback {
+    margin-top: 10px;
+    font-size: 18px;
+    color: red;
+}
+
+#question {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px; /* Отступ между текстом и кнопками */
+    text-align: center;  /* Центрирование текста */
+}
+
+#sparkles-container {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    overflow: visible;
+    pointer-events: none;
+    z-index: 0; /* Искры находятся за всплывающим окном */
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: gold;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle-animation 1s ease-out forwards;
+    z-index: 0;
+}
+
+@keyframes sparkle-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translate(calc(100px * var(--random-x)), calc(100px * var(--random-y)));
+    }
+}
+
+
+

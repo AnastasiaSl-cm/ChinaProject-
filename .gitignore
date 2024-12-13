@@ -1,0 +1,25 @@
+# Логи и временные файлы
+*.log
+*.tmp
+*.swp
+
+# Node.js папки и файлы
+node_modules/
+npm-debug.log
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Конфиденциальные данные
+.env
+config.json
+
+# Файлы IDE/редакторов
+.vscode/
+.idea/
+*.iml
+
+# Компилированные или временные файлы
+*.pyc
+__pycache__/

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Числовой лабиринт"</title>
+    <link rel="stylesheet" href="styles-numbers.css">
+</head>
+<body>
+    <div class="container">
+        <div class="temple">
+            <h1>Числовой лабиринт</h1>
+            <div id="maze"></div>
+            <div class="controls">
+                <input type="text" id="answer" placeholder="Введите китайское числительное">
+                <button id="submit">Отправить</button>
+            </div>
+            <div id="message"></div>
+            <div class="hints">
+                <h2>Подсказки: Китайские числительные</h2>
+                <table>
+                    <tr><th>Число</th><th>Китайский</th></tr>
+                    <tr><td>1</td><td>一 (yī)</td></tr>
+                    <tr><td>2</td><td>二 (èr)</td></tr>
+                    <tr><td>3</td><td>三 (sān)</td></tr>
+                    <tr><td>4</td><td>四 (sì)</td></tr>
+                    <tr><td>5</td><td>五 (wǔ)</td></tr>
+                    <tr><td>6</td><td>六 (liù)</td></tr>
+                    <tr><td>7</td><td>七 (qī)</td></tr>
+                    <tr><td>8</td><td>八 (bā)</td></tr>
+                    <tr><td>9</td><td>九 (jiǔ)</td></tr>
+                    <tr><td>10</td><td>十 (shí)</td></tr>
+                    <tr><td>20</td><td>二十 (èr shí)</td></tr>
+                    <tr><td>100</td><td>一百 (yī bǎi)</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для поздравления -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <p id="modal-message">Поздравляем! Вы прошли лабиринт!</p>
+            <button id="restart" class="restart-btn">Начать заново</button>
+        </div>
+    </div>
+
+    <script src="script-numbers.js"></script>
+</body>
+</html>
